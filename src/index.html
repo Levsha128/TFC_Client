@@ -7,8 +7,51 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-  <app-root>Loading...</app-root>
+
+<app-root>
+  <div class="loading loading-big"></div>
+  <div class="loading"></div>
+</app-root>
+<style>
+  body {
+    margin: 0px;
+    background: #303030;
+  }
+
+  .loading {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    background: #42b3de;
+    opacity: 0.8;
+    margin-top: -10px;
+    margin-left: -10px;
+    animation: resize 0.5s infinite alternate;
+  }
+
+  .loading.loading-big {
+    width: 50px;
+    height: 50px;
+    margin-top: -25px;
+    margin-left: -25px;
+    border-radius: 50px;
+    animation: resize 0.5s 0.1s infinite alternate;
+  }
+
+  @keyframes resize {
+    from {
+      transform-scale: scale(1);
+    }
+    to {
+      transform: scale(1.5);
+    }
+  }
+</style>
 </body>
 </html>

@@ -1,1 +1,40 @@
-/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+md-sidenav {
+  max-width: 200px;
+}
+
+md-toolbar.mat-toolbar{
+  position: fixed;
+  width: 100%;
+  top: 0;
+  height: 48px;
+  min-height: 48px;
+  z-index: 1000;
+}
+
+md-toolbar-row.mat-toolbar-row{
+  height: 48px;
+  min-height: 48px;
+}
+
+md-sidenav-container {
+  margin-top: 48px;
+}
+
+md-sidenav-container{
+  min-height: 500px;
+    }
+
+
+.card {
+  margin: 20px;
+  width: 400px;
+}
+
+@media screen and (max-width: 400px) {
+  .card {
+    width: auto;
+    margin: 5px ;
+  }
+}

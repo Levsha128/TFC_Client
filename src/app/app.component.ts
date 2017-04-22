@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +6,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
+  menuGroups = [
+    {
+      items: [
+        {'title': 'Games', 'link': '/games', 'icon': 'group'},
+        {'title': 'Friends', 'link': '/friends', 'icon': 'face'},
+        {'title': 'Chat', 'link': '/chats', 'icon': 'chat'},
+      ]
+    },
+    {
+      'title': 'Settings',
+      items: [
+        {'title': 'Settings', 'link': '/settings', 'icon': 'settings'},
+        {'title': 'Exit', 'link': '/exit', 'icon': 'clear'},
+      ]
+    }
+  ];
 }
