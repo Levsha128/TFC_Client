@@ -21,16 +21,16 @@
   border-left: 1px solid #000000;
 }
 
-.game-timeline__event_first-team .player,
-.game-timeline__event_first-team .time,
+.game-timeline__event_first-team .content,
 .game-timeline__event_first-team fa {
   float: right;
+  text-align: right;
 }
 
-.game-timeline__event_second-team .player,
-.game-timeline__event_second-team .time,
+.game-timeline__event_second-team .content,
 .game-timeline__event_second-team fa {
   float: left;
+  text-align: left;
 }
 
 .game-timeline__event_first-team fa {
@@ -44,4 +44,13 @@
 fa {
   font-size: 20px;
   display: inline-block;
+}
+
+.player{
+
+}
+
+.time{
+  color: #b7b7b7;
+  font-size: 14px;
 }

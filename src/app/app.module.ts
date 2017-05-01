@@ -15,12 +15,12 @@ const appRoutes: Routes = [
 ];
 
 import { AppComponent } from './app.component';
-import { GameResultPostComponent } from './game-result-post/game-result-post.component';
+import { GameResultPostComponent } from './components/game-result-post/game-result-post.component';
 import { Angular2FontAwesomeModule } from 'angular2-font-awesome/angular2-font-awesome';
-import { GamesComponent } from './games/games.component';
+import { GamesComponent } from './components/games/games.component';
 import {NgxChartsModule} from '@swimlane/ngx-charts';
-import { GameComponent } from './game/game.component';
-import { GameTimelineComponent } from './game-timeline/game-timeline.component';
+import { GameComponent } from './components/game/game.component';
+import { GameTimelineComponent } from './components/game-timeline/game-timeline.component';
 
 @NgModule({
   declarations: [

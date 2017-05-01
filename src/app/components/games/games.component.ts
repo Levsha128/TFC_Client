@@ -4,8 +4,8 @@ import 'rxjs/add/operator/toPromise';
 
 @Component({
   selector: 'app-games',
-  templateUrl: './games.component.html',
-  styleUrls: ['./games.component.css']
+  templateUrl: 'games.component.html',
+  styleUrls: ['games.component.css']
 })
 export class GamesComponent implements OnInit {
   apiRoot: string = 'http://localhost:3000';

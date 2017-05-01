@@ -1,0 +1,18 @@
+<div class="header">
+    <div class="header-column">Team1</div>
+    <div class="header-column">Team2</div>
+</div>
+<ul class="game-timeline">
+    <li *ngFor="let event of events" class="game-timeline__event"
+        [ngClass]="{
+  'game-timeline__event_first-team': event.team === 'first',
+  'game-timeline__event_second-team': event.team === 'second'
+  }"
+    >
+        <fa name="soccer-ball-o"></fa>
+        <div class="content">
+            <div class="player">{{event.playerName}}</div>
+            <div class="time">{{event.time}}</div>
+        </div>
+    </li>
+</ul>
