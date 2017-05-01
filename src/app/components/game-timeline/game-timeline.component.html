@@ -1,6 +1,6 @@
-<div class="header">
-    <div class="header-column">Team1</div>
-    <div class="header-column">Team2</div>
+<div class="header" *ngIf="firstTeam && secondTeam">
+    <div class="header-column">{{firstTeam.name}}</div>
+    <div class="header-column">{{secondTeam.name}}</div>
 </div>
 <ul class="game-timeline">
     <li *ngFor="let event of events" class="game-timeline__event"
@@ -12,7 +12,8 @@
         <fa name="soccer-ball-o"></fa>
         <div class="content">
             <div class="player">{{event.playerName}}</div>
-            <div class="time">{{event.time}}</div><div class="score">({{event.score.firstTeam}}:{{event.score.secondTeam}})</div>
+            <div class="time">{{event.time}}</div>
+            <div class="score">({{event.score.firstTeam}}:{{event.score.secondTeam}})</div>
         </div>
     </li>
 </ul>

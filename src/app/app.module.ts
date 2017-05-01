@@ -21,6 +21,7 @@ import { GamesComponent } from './components/games/games.component';
 import {NgxChartsModule} from '@swimlane/ngx-charts';
 import { GameComponent } from './components/game/game.component';
 import { GameTimelineComponent } from './components/game-timeline/game-timeline.component';
+import {GamesService} from "./services/games.service";
 
 @NgModule({
   declarations: [
@@ -40,7 +41,7 @@ import { GameTimelineComponent } from './components/game-timeline/game-timeline.
     BrowserAnimationsModule,
     NgxChartsModule
   ],
-  providers: [],
+  providers: [GamesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

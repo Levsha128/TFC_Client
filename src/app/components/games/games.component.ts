@@ -1,26 +1,26 @@
 import {Component, OnInit} from '@angular/core';
-import {Http} from '@angular/http';
 import 'rxjs/add/operator/toPromise';
+import {GamesService} from '../../services/games.service';
 
 @Component({
-  selector: 'app-games',
-  templateUrl: 'games.component.html',
-  styleUrls: ['games.component.css']
+    selector: 'app-games',
+    templateUrl: 'games.component.html',
+    styleUrls: ['games.component.css']
 })
 export class GamesComponent implements OnInit {
-  apiRoot: string = 'http://localhost:3000';
-  games: any = [];
+    games: any = [];
 
-  constructor(private http: Http) {
+    constructor(private gamesService: GamesService) {
 
-  }
+    }
 
-  ngOnInit() {
-    this.get();
-  }
+    ngOnInit() {
+        this.load();
+    }
 
-  get() {
-    let url = `${this.apiRoot}/games`;
-    this.http.get(url).toPromise().then(res => this.games = res.json(), e => console.log(e));
-  }
+    load() {
+        this.gamesService
+            .getGames()
+            .then(res => this.games = res.json(), e => console.log(e));
+    }
 }

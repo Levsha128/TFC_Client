@@ -1,71 +1,10 @@
 <md-tab-group>
     <md-tab label="Timeline">
         <app-game-timeline
-                [events]="[
-    {
-        'playerName': 'Player1',
-        'time': '11:01',
-        'team': 'first',
-        'score':{
-            'firstTeam':1,
-            'secondTeam':0
-        }
-    },
-    {
-        'playerName': 'Player2',
-        'time': '11:02',
-        'team': 'second',
-        'score':{
-            'firstTeam':1,
-            'secondTeam':1
-        }
-    },
-    {
-        'playerName': 'Player2',
-        'time': '11:03',
-        'team': 'second',
-        'score':{
-            'firstTeam':1,
-            'secondTeam':2
-        }
-    },
-    {
-        'playerName': 'Player2',
-        'time': '11:04',
-        'team': 'second',
-        'score':{
-            'firstTeam':1,
-            'secondTeam':3
-        }
-    },
-    {
-        'playerName': 'Player1',
-        'time': '11:05',
-        'team': 'first',
-        'score':{
-            'firstTeam':2,
-            'secondTeam':3
-        }
-    },
-    {
-        'playerName': 'Player2',
-        'time': '11:06',
-        'team': 'second',
-        'score':{
-            'firstTeam':2,
-            'secondTeam':4
-        }
-    },
-    {
-        'playerName': 'Player2',
-        'time': '11:07',
-        'team': 'second',
-        'score':{
-            'firstTeam':2,
-            'secondTeam':5
-        }
-    }
-]"></app-game-timeline>
+                [events]="game.events"
+                [firstTeam]="game.firstTeam"
+                [secondTeam]="game.secondTeam"
+        ></app-game-timeline>
     </md-tab>
     <md-tab label="Statistics">
         <!--<main [class]="theme">-->
