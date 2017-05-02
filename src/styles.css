@@ -4,7 +4,7 @@ md-sidenav {
   max-width: 200px;
 }
 
-md-toolbar.mat-toolbar{
+md-toolbar.mat-toolbar {
   position: fixed;
   width: 100%;
   top: 0;
@@ -13,7 +13,7 @@ md-toolbar.mat-toolbar{
   z-index: 1000;
 }
 
-md-toolbar-row.mat-toolbar-row{
+md-toolbar-row.mat-toolbar-row {
   height: 48px;
   min-height: 48px;
 }
@@ -22,10 +22,9 @@ md-sidenav-container {
   margin-top: 48px;
 }
 
-md-sidenav-container{
+md-sidenav-container {
   min-height: 500px;
-    }
-
+}
 
 .card {
   margin: 20px;
@@ -35,6 +34,6 @@ md-sidenav-container{
 @media screen and (max-width: 400px) {
   .card {
     width: auto;
-    margin: 5px ;
+    margin: 5px;
   }
 }

@@ -8,7 +8,7 @@
   width: 40px;
   height: 40px;
   display: inline-block;
-  border:none;
+  border: none;
 }
 
 .team.team-first .team-logo {
@@ -19,31 +19,32 @@
   margin-left: 10px;
 }
 
-
-.team .team-credentials{
+.team .team-credentials {
   display: inline-block;
   vertical-align: top;
   font-size: 14px;
 }
-.team.team-first .team-credentials{
+
+.team.team-first .team-credentials {
   float: right;
 }
-.team.team-second .team-credentials{
+
+.team.team-second .team-credentials {
   float: left;
 }
 
-.team .team-group{
+.team .team-group {
   color: #afafaf;
 }
 
 .score {
   text-align: center;
   flex-basis: 45px;
-  font-weight:700;
+  font-weight: 700;
   font-size: 18px;
 }
 
-.description{
+.description {
   margin-top: 10px;
   font-size: 14px;
   color: #afafaf;

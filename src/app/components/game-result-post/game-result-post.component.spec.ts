@@ -1,9 +1,9 @@
 /* tslint:disable:no-unused-variable */
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import {By} from '@angular/platform-browser';
+import {DebugElement} from '@angular/core';
 
-import { GameResultPostComponent } from './game-result-post.component';
+import {GameResultPostComponent} from './game-result-post.component';
 
 describe('GameResultPostComponent', () => {
   let component: GameResultPostComponent;
@@ -11,9 +11,9 @@ describe('GameResultPostComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ GameResultPostComponent ]
+      declarations: [GameResultPostComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

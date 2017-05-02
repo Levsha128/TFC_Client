@@ -1,67 +1,67 @@
 .game-timeline {
-    list-style: none;
-    padding: 0px;
-    margin: 10px 10px;
+  list-style: none;
+  padding: 0px;
+  margin: 10px 10px;
 }
 
 .game-timeline__event {
-    width: 50%;
-    clear: both;
-    padding: 10px 0px;
+  width: 50%;
+  clear: both;
+  padding: 10px 0px;
 }
 
 .game-timeline__event_first-team {
-    float: left;
-    border-right: 1px solid #000000;
-    box-sizing: border-box;
+  float: left;
+  border-right: 1px solid #000000;
+  box-sizing: border-box;
 }
 
 .game-timeline__event_second-team {
-    float: right;
-    border-left: 1px solid #000000;
+  float: right;
+  border-left: 1px solid #000000;
 }
 
 .game-timeline__event_first-team .content,
 .game-timeline__event_first-team fa {
-    float: right;
-    text-align: right;
+  float: right;
+  text-align: right;
 }
 
 .game-timeline__event_second-team .content,
 .game-timeline__event_second-team fa {
-    float: left;
-    text-align: left;
+  float: left;
+  text-align: left;
 }
 
 .game-timeline__event_first-team fa {
-    transform: translateX(50%);
+  transform: translateX(50%);
 }
 
 .game-timeline__event_second-team fa {
-    transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 
 fa {
-    font-size: 20px;
-    display: inline-block;
+  font-size: 20px;
+  display: inline-block;
 }
 
-.player {
+.title {
 
 }
 
-.time, .score {
-    color: #b7b7b7;
-    font-size: 14px;
+.time, .description {
+  color: #b7b7b7;
+  font-size: 14px;
 }
 
 .header {
-    width: 100%;
+  width: 100%;
 }
 
 .header-column {
-    width: 50%;
-    text-align: center;
-    display: inline-block;
-    float: left;
+  width: 50%;
+  text-align: center;
+  display: inline-block;
+  float: left;
 }

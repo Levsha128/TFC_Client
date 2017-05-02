@@ -3,24 +3,24 @@ import 'rxjs/add/operator/toPromise';
 import {GamesService} from '../../services/games.service';
 
 @Component({
-    selector: 'app-games',
-    templateUrl: 'games.component.html',
-    styleUrls: ['games.component.css']
+  selector: 'app-games',
+  templateUrl: 'games.component.html',
+  styleUrls: ['games.component.css']
 })
 export class GamesComponent implements OnInit {
-    games: any = [];
+  games: any = [];
 
-    constructor(private gamesService: GamesService) {
+  constructor(private gamesService: GamesService) {
 
-    }
+  }
 
-    ngOnInit() {
-        this.load();
-    }
+  ngOnInit() {
+    this.load();
+  }
 
-    load() {
-        this.gamesService
-            .getGames()
-            .then(res => this.games = res.json(), e => console.log(e));
-    }
+  load() {
+    this.gamesService
+      .getGames()
+      .then(res => this.games = res.json(), e => console.log(e));
+  }
 }

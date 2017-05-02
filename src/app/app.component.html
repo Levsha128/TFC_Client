@@ -17,7 +17,9 @@
   </md-sidenav>
   <router-outlet></router-outlet>
 </md-sidenav-container>
-<!--<button md-fab class="md-fab md-fab-bottom-right"><md-icon>add</md-icon></button>-->
+<a md-fab class="md-fab md-fab-bottom-right" [routerLink]="['games', 'new']">
+  <md-icon>add</md-icon>
+</a>
 
 
 
