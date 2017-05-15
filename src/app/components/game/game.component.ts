@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {GamesService} from "../../services/games.service";
 import {ActivatedRoute, Params} from "@angular/router";
+import {Game} from "../../models/game";
 
 @Component({
   selector: 'app-game',
@@ -8,7 +9,7 @@ import {ActivatedRoute, Params} from "@angular/router";
   styleUrls: ['game.component.css']
 })
 export class GameComponent implements OnInit {
-  game: any = {};
+  game: Game = new Game();
 
   constructor(private activatedRoute: ActivatedRoute, private gamesService: GamesService) {
   }
@@ -22,7 +23,7 @@ export class GameComponent implements OnInit {
   load(id) {
     this.gamesService
       .get(id)
-      .then(res => this.game = res.json(), e => console.log(e));
+      .then(res => this.game = res, e => console.log(e));
   }
 
 }

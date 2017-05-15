@@ -1,5 +1,8 @@
 import {Injectable} from '@angular/core';
 import {Http} from '@angular/http';
+import {Game} from "../models/game";
+import {Player} from "../models/player";
+import {Team} from "../models/team";
 
 @Injectable()
 export class GamesService {
@@ -8,29 +11,25 @@ export class GamesService {
   constructor(private http: Http) {
   }
 
-  getGames() {
+  getGames(): Promise<Game[]> {
     const url = `${this.apiRoot}/games`;
-    return this.http.get(url).toPromise();
+    return this.http.get(url).toPromise().then(response => response.json().data as Game[]);
   }
 
-  get(id: number) {
+  get(id: number): Promise<Game> {
     const url = `${this.apiRoot}/games/${id}`;
-    return this.http.get(url).toPromise();
-  }
-
-  create(firstTeamForward,
-         firstTeamGoalkeeper,
-         secondTeamForward,
-         secondTeamGoalkeeper): Promise<any> {
-    return new Promise<any>((resolve) => {
-      setTimeout(() => resolve({id: 42, firstTeamForward,
-        firstTeamGoalkeeper,
-        secondTeamForward,
-        secondTeamGoalkeeper}), 1000);
+    return this.http.get(url).toPromise().then(response => {
+      return response.json().data as Game;
     });
   }
 
-  goal(gameId: number, playerId: number, ownGoal = false) {
+  create(game: Game): Promise<Game> {
+    return new Promise<Game>((resolve) => {
+      setTimeout(() => resolve(new Game(1, new Team(), new Team())), 1000);
+    });
+  }
+
+  goal(gameId: number, playerId: number, ownGoal = false): Promise<any> {
     return new Promise<any>((resolve) => {
       setTimeout(() => resolve({}), 1000);
     });

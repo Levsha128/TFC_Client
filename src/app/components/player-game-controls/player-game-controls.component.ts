@@ -1,7 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {PlayersService} from "../../services/players.service";
-import {GamesService} from "../../services/games.service";
-import {InputDecorator} from "@angular/core/src/metadata/directives";
+import {PlayersService} from '../../services/players.service';
+import {Player} from '../../models/player';
 
 @Component({
   selector: 'app-player-game-controls',
@@ -9,24 +8,18 @@ import {InputDecorator} from "@angular/core/src/metadata/directives";
   styleUrls: ['./player-game-controls.component.css']
 })
 export class PlayerGameControlsComponent implements OnInit {
-  @Input() playerId: number;
+  @Input() player: Player;
   @Output() onGoal = new EventEmitter<any>();
-  player: any;
 
-  constructor(private playersService: PlayersService) {
-    this.player = this.playersService.getMock();
-  }
-
-  ngOnInit() {
-    this.player = this.playersService.get(this.playerId);
+  ngOnInit(): void {
   }
 
   goal() {
-    this.onGoal.emit({'player_id': this.playerId, 'own_goal': false});
+    this.onGoal.emit({'player_id': this.player.id, 'own_goal': false});
   }
 
   ownGoal() {
-    this.onGoal.emit({'player_id': this.playerId, 'own_goal': true});
+    this.onGoal.emit({'player_id': this.player.id, 'own_goal': true});
   }
 
 }

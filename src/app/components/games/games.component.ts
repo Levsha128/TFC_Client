@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import 'rxjs/add/operator/toPromise';
 import {GamesService} from '../../services/games.service';
+import {Game} from "../../models/game";
 
 @Component({
   selector: 'app-games',
@@ -8,7 +9,7 @@ import {GamesService} from '../../services/games.service';
   styleUrls: ['games.component.css']
 })
 export class GamesComponent implements OnInit {
-  games: any = [];
+  games: Game[] = [];
 
   constructor(private gamesService: GamesService) {
 
@@ -21,6 +22,6 @@ export class GamesComponent implements OnInit {
   load() {
     this.gamesService
       .getGames()
-      .then(res => this.games = res.json(), e => console.log(e));
+      .then(res => this.games = res, e => console.log(e));
   }
 }
