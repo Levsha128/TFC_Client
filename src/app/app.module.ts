@@ -24,6 +24,8 @@ import {GameComponent} from './components/game/game.component';
 import {GameTimelineComponent} from './components/game-timeline/game-timeline.component';
 import {GamesService} from "./services/games.service";
 import {NewGameComponent} from './components/new-game/new-game.component';
+import {PlayersService} from "./services/players.service";
+import { PlayerGameControlsComponent } from './components/player-game-controls/player-game-controls.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,8 @@ import {NewGameComponent} from './components/new-game/new-game.component';
     GamesComponent,
     GameComponent,
     GameTimelineComponent,
-    NewGameComponent
+    NewGameComponent,
+    PlayerGameControlsComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +47,7 @@ import {NewGameComponent} from './components/new-game/new-game.component';
     BrowserAnimationsModule,
     NgxChartsModule
   ],
-  providers: [GamesService],
+  providers: [GamesService, PlayersService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

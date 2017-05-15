@@ -17,4 +17,23 @@ export class GamesService {
     const url = `${this.apiRoot}/games/${id}`;
     return this.http.get(url).toPromise();
   }
+
+  create(firstTeamForward,
+         firstTeamGoalkeeper,
+         secondTeamForward,
+         secondTeamGoalkeeper): Promise<any> {
+    return new Promise<any>((resolve) => {
+      setTimeout(() => resolve({id: 42, firstTeamForward,
+        firstTeamGoalkeeper,
+        secondTeamForward,
+        secondTeamGoalkeeper}), 1000);
+    });
+  }
+
+  goal(gameId: number, playerId: number, ownGoal = false) {
+    return new Promise<any>((resolve) => {
+      setTimeout(() => resolve({}), 1000);
+    });
+
+  }
 }

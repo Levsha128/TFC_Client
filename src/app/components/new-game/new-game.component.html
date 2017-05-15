@@ -1,0 +1,38 @@
+<md-progress-bar mode="indeterminate" *ngIf="progress"></md-progress-bar>
+<md-card>
+  <md-card-content *ngIf="state === 'selectPlayers'">
+    <h2>
+      Select players
+    </h2>
+    <h3>
+      First team
+    </h3>
+    <md-select placeholder="Forward" [(ngModel)]="firstTeamForward">
+      <md-option *ngFor="let player of players" [value]="player.id">{{ player.name }}</md-option>
+    </md-select>
+    <md-select placeholder="Goalkeeper" [(ngModel)]="firstTeamGoalkeeper">
+      <md-option *ngFor="let player of players" [value]="player.id">{{ player.name }}</md-option>
+    </md-select>
+    <h3>
+      Second team
+    </h3>
+    <md-select placeholder="Forward" [(ngModel)]="secondTeamForward">
+      <md-option *ngFor="let player of players" [value]="player.id">{{ player.name }}</md-option>
+    </md-select>
+    <md-select placeholder="Goalkeeper" [(ngModel)]="secondTeamGoalkeeper">
+      <md-option *ngFor="let player of players" [value]="player.id">{{ player.name }}</md-option>
+    </md-select>
+    <button md-raised-button color="primary" [disabled]="progress" style="margin-top: 20px;" (click)="start()">Start
+    </button>
+  </md-card-content>
+  <md-card-content *ngIf="state === 'game'">
+    Team1 - Team2
+    1:00
+    <ul>
+      <app-player-game-controls [playerId]="firstTeamForward" (onGoal)="onGoal($event)"></app-player-game-controls>
+      <app-player-game-controls [playerId]="firstTeamGoalkeeper" (onGoal)="onGoal($event)"></app-player-game-controls>
+      <app-player-game-controls [playerId]="secondTeamForward" (onGoal)="onGoal($event)"></app-player-game-controls>
+      <app-player-game-controls [playerId]="secondTeamGoalkeeper" (onGoal)="onGoal($event)"></app-player-game-controls>
+    </ul>
+  </md-card-content>
+</md-card>
