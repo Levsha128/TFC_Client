@@ -25,7 +25,7 @@ export class GamesService {
 
   create(game: Game): Promise<Game> {
     return new Promise<Game>((resolve) => {
-      setTimeout(() => resolve(new Game(1, new Team(), new Team())), 1000);
+      setTimeout(() => resolve(new Game(1, 0, 1)), 1000);
     });
   }
 

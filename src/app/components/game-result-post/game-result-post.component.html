@@ -1,26 +1,7 @@
 <md-card class="card">
-  <div class="teams-line">
-    <a class="team team-first">
-      <img class="team-logo" [src]="firstTeam.logo">
-      <div class="team-credentials">
-        <div class="team-name">{{firstTeam.name}}</div>
-        <div class="team-group">{{firstTeam.group}}</div>
-      </div>
-    </a>
-    <div class="score">{{score.firstTeam}} - {{score.secondTeam}}</div>
-    <a class="team team-second">
-      <img class="team-logo" [src]="secondTeam.logo">
-      <div class="team-credentials">
-        <div class="team-name">{{secondTeam.name}}</div>
-        <div class="team-group">{{secondTeam.group}}</div>
-      </div>
-    </a>
-  </div>
-  <div class="description">
-    {{description}}
-  </div>
+  <app-game-result [game]="game"></app-game-result>
   <md-card-actions>
     <!--<button md-button>LIKE</button>-->
-    <button md-button [routerLink]="['/games', id]">DETAILS</button>
+    <button md-button [routerLink]="['/games', game.id]">DETAILS</button>
   </md-card-actions>
 </md-card>

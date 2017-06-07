@@ -2,6 +2,9 @@ import {Component, OnInit} from '@angular/core';
 import {PlayersService} from "../../services/players.service";
 import {GamesService} from "../../services/games.service";
 import {Game} from "../../models/game";
+import {Player} from '../../models/player';
+import {Team} from '../../models/team';
+import {TeamsService} from '../../services/teams.service';
 
 @Component({
   selector: 'app-new-game',
@@ -14,9 +17,14 @@ export class NewGameComponent implements OnInit {
 
   progress = false;
   game: Game = new Game();
-  self = this;
+  firstTeamForward: number = null;
+  firstTeamGoalkeeper: number = null;
+  secondTeamForward: number = null;
+  secondTeamGoalkeeper: number = null;
+  firstTeam: Team = new Team();
+  secondTeam: Team = new Team();
 
-  constructor(private playersService: PlayersService, private gamesService: GamesService) {
+  constructor(private playersService: PlayersService, private gamesService: GamesService, private teamsService: TeamsService) {
   }
 
   ngOnInit() {
@@ -25,12 +33,13 @@ export class NewGameComponent implements OnInit {
 
   start() {
     this.progress = true;
-    this.state = 'game';
     this.gamesService.create(this.game)
       .then(
         (result) => {
+          this.state = 'game';
           this.game = result;
           this.progress = false;
+          this.updateTeams();
         },
         (error) => {
           console.log(error);
@@ -50,6 +59,11 @@ export class NewGameComponent implements OnInit {
         this.progress = false;
       }
     );
+  }
+
+  public updateTeams() {
+    this.teamsService.get(this.game.firstTeamId).then((res) => this.firstTeam = res, (err) => console.error(err));
+    this.teamsService.get(this.game.secondTeamId).then((res) => this.secondTeam = res, (err) => console.error(err));
   }
 
   public onGoal(goal) {

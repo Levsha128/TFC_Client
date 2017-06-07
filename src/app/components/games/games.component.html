@@ -1,7 +1,3 @@
 <app-game-result-post *ngFor="let game of games"
-                      [id]="game.id"
-                      [firstTeam]="game.firstTeam"
-                      [secondTeam]="game.secondTeam"
-                      [score]="game.score"
-                      [description]="game.description"
+                      [game]="game"
 ></app-game-result-post>

@@ -1,25 +1,30 @@
 <md-tab-group>
+  <md-tab label="General">
+    <div class="game-result-wrapper">
+      <app-game-result [game]="game"></app-game-result>
+    </div>
+  </md-tab>
   <md-tab label="Timeline">
     <app-game-timeline
-      [events]="game.events"
-      [firstTeam]="game.firstTeam"
-      [secondTeam]="game.secondTeam"
+      [events]="events"
+      [firstTeam]="firstTeam"
+      [secondTeam]="secondTeam"
     ></app-game-timeline>
   </md-tab>
-  <md-tab label="Statistics">
-    <!--<main [class]="theme">-->
-    <!--<ngx-charts-pie-chart-->
-    <!--[view]="view"-->
-    <!--[scheme]="colorScheme"-->
-    <!--[schemeType]="schemeType"-->
-    <!--[results]="single"-->
-    <!--[legend]="showLegend"-->
-    <!--[explodeSlices]="explodeSlices"-->
-    <!--[labels]="showLabels"-->
-    <!--[doughnut]="doughnut"-->
-    <!--[gradient]="gradient"-->
-    <!--(select)="onSelect($event)">-->
-    <!--</ngx-charts-pie-chart>-->
-    <!--</main>-->
+  <md-tab label="Statistics" style="text-align: center;">
+    <main style="fill: #5aa454; display: inline-block;" *ngFor="let gameStats of stats">
+      <ngx-charts-gauge
+        [view]="chartsView"
+        [scheme]="chartsColorScheme"
+        [results]="gameStats.data"
+        [min]="gameStats.min"
+        [max]="gameStats.max  "
+        [showAxis]="false"
+        [angleSpan]="240"
+        [startAngle]="-120"
+        [units]="gameStats.units"
+      >
+      </ngx-charts-gauge>
+    </main>
   </md-tab>
 </md-tab-group>

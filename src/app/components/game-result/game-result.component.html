@@ -1,0 +1,20 @@
+<div class="teams-line">
+  <a class="team team-first">
+    <img class="team-logo" [src]="firstTeam.logo">
+    <div class="team-credentials">
+      <div class="team-name">{{firstTeam.name}}</div>
+      <div class="team-group">{{firstTeam.group}}</div>
+    </div>
+  </a>
+  <div class="score">{{game.score.firstTeam}} - {{game.score.secondTeam}}</div>
+  <a class="team team-second">
+    <img class="team-logo" [src]="secondTeam.logo">
+    <div class="team-credentials">
+      <div class="team-name">{{secondTeam.name}}</div>
+      <div class="team-group">{{secondTeam.group}}</div>
+    </div>
+  </a>
+</div>
+<div class="description">
+  {{game.description}}
+</div>

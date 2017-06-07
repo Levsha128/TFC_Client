@@ -26,13 +26,13 @@
     </button>
   </md-card-content>
   <md-card-content *ngIf="state === 'game'">
-    Team1 - Team2
-    1:00
+    {{firstTeam.name}} - {{secondTeam.name}}
+    {{game.score.firstTeam}} : {{game.score.secondTeam}}
     <ul>
-      <app-player-game-controls [player]="game.firstTeam.forward" (onGoal)="onGoal($event)"></app-player-game-controls>
-      <app-player-game-controls [player]="game.firstTeam.goalkeeper" (onGoal)="onGoal($event)"></app-player-game-controls>
-      <app-player-game-controls [player]="game.secondTeam.forward" (onGoal)="onGoal($event)"></app-player-game-controls>
-      <app-player-game-controls [player]="game.secondTeam.goalkeeper" (onGoal)="onGoal($event)"></app-player-game-controls>
+      <app-player-game-controls [playerId]="firstTeamForward" (onGoal)="onGoal($event)"></app-player-game-controls>
+      <app-player-game-controls [playerId]="firstTeamGoalkeeper" (onGoal)="onGoal($event)"></app-player-game-controls>
+      <app-player-game-controls [playerId]="secondTeamForward" (onGoal)="onGoal($event)"></app-player-game-controls>
+      <app-player-game-controls [playerId]="secondTeamGoalkeeper" (onGoal)="onGoal($event)"></app-player-game-controls>
     </ul>
   </md-card-content>
 </md-card>

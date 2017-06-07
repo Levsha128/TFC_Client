@@ -25,7 +25,11 @@ import {GameTimelineComponent} from './components/game-timeline/game-timeline.co
 import {GamesService} from "./services/games.service";
 import {NewGameComponent} from './components/new-game/new-game.component';
 import {PlayersService} from "./services/players.service";
-import { PlayerGameControlsComponent } from './components/player-game-controls/player-game-controls.component';
+import {PlayerGameControlsComponent} from './components/player-game-controls/player-game-controls.component';
+import {TeamsService} from "./services/teams.service";
+import {GameEventsService} from "./services/game-events.service";
+import {GameResultComponent} from './components/game-result/game-result.component';
+import {GameStatsService} from './services/game-stats.service';
 
 @NgModule({
   declarations: [
@@ -35,7 +39,8 @@ import { PlayerGameControlsComponent } from './components/player-game-controls/p
     GameComponent,
     GameTimelineComponent,
     NewGameComponent,
-    PlayerGameControlsComponent
+    PlayerGameControlsComponent,
+    GameResultComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +52,7 @@ import { PlayerGameControlsComponent } from './components/player-game-controls/p
     BrowserAnimationsModule,
     NgxChartsModule
   ],
-  providers: [GamesService, PlayersService],
+  providers: [GamesService, PlayersService, TeamsService, GameEventsService, GameStatsService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
