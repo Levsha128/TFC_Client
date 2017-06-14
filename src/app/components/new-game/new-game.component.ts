@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {PlayersService} from "../../services/players.service";
 import {GamesService} from "../../services/games.service";
-import {Game} from "../../models/game";
+import {Game, GameState} from "../../models/game";
 import {Player} from '../../models/player';
 import {Team} from '../../models/team';
 import {TeamsService} from '../../services/teams.service';
@@ -13,7 +13,6 @@ import {TeamsService} from '../../services/teams.service';
 })
 export class NewGameComponent implements OnInit {
   players = [];
-  state = 'selectPlayers';
 
   progress = false;
   game: Game = new Game();
@@ -23,6 +22,7 @@ export class NewGameComponent implements OnInit {
   secondTeamGoalkeeper: number = null;
   firstTeam: Team = new Team();
   secondTeam: Team = new Team();
+  STATES: typeof GameState = GameState;
 
   constructor(private playersService: PlayersService, private gamesService: GamesService, private teamsService: TeamsService) {
   }
@@ -33,10 +33,9 @@ export class NewGameComponent implements OnInit {
 
   start() {
     this.progress = true;
-    this.gamesService.create(this.game)
+    this.gamesService.create(this.firstTeamForward, this.firstTeamGoalkeeper, this.secondTeamForward, this.secondTeamGoalkeeper)
       .then(
         (result) => {
-          this.state = 'game';
           this.game = result;
           this.progress = false;
           this.updateTeams();
@@ -68,7 +67,7 @@ export class NewGameComponent implements OnInit {
 
   public onGoal(goal) {
     this.progress = true;
-    this.gamesService.goal(this.game.id, goal.player_id, goal.own_goal)
+    this.gamesService.goal(this.game.id, goal.goalmakerId, goal.goalkeeperId)
       .then(
         (result) => {
           this.gamesService.get(this.game.id)

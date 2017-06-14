@@ -6,7 +6,7 @@ import {Http} from "@angular/http";
 export class TeamsService {
   private apiRoot: string = 'http://192.168.1.100:3000';
 
-  constructor(private http: Http) {
+    constructor(private http: Http) {
   }
 
   get(id: number): Promise<Team> {

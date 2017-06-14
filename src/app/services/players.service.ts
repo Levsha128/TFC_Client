@@ -1,29 +1,25 @@
 import {Injectable} from '@angular/core';
-import {Player} from "../models/player";
+import {Player} from '../models/player';
+import {Http} from '@angular/http';
 
 @Injectable()
 export class PlayersService {
+  private apiRoot: string = 'http://192.168.1.100:3000';
 
-  constructor() {
+  constructor(private http: Http) {
   }
 
   public getFriendsList() {
-    return new Promise<Player[]>((resolve) => {
-      setTimeout(() => resolve([
-        new Player(1, 'Player 1'),
-        new Player(2, 'Player 2'),
-        new Player(3, 'Player 3'),
-        new Player(4, 'Player 4')
-      ]), 1000);
+    const url = `${this.apiRoot}/players/`;
+    return this.http.get(url).toPromise().then(response => {
+      return response.json().data as Player[];
     });
   }
 
   public get(id) {
-    return new Promise<Player>((resolve) => {
-      setTimeout(() => resolve(
-        new Player(1, 'Player 1')
-      ), 1000);
+    const url = `${this.apiRoot}/players/${id}`;
+    return this.http.get(url).toPromise().then(response => {
+      return response.json().data as Player;
     });
-
   }
 }

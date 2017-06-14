@@ -9,6 +9,8 @@ import {Player} from '../../models/player';
 })
 export class PlayerGameControlsComponent implements OnInit, OnChanges {
   @Input() playerId: number;
+  @Input() ownGoalkeeperId: number;
+  @Input() enemyGoalkeeperId: number;
   @Output() onGoal = new EventEmitter<any>();
   private player = new Player();
 
@@ -20,11 +22,11 @@ export class PlayerGameControlsComponent implements OnInit, OnChanges {
   }
 
   goal() {
-    this.onGoal.emit({'player_id': this.player.id, 'own_goal': false});
+    this.onGoal.emit({'goalmakerId': this.playerId, 'goalkeeperId': this.enemyGoalkeeperId});
   }
 
   ownGoal() {
-    this.onGoal.emit({'player_id': this.player.id, 'own_goal': true});
+    this.onGoal.emit({'goalmakerId': this.playerId, 'goalkeeperId': this.ownGoalkeeperId});
   }
 
 
