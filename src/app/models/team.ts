@@ -5,8 +5,8 @@ export class Team {
               public name: string = '',
               public group: string = '',
               public logo: string = '',
-              public forward: number = null,
-              public goalkeeper: number = null) {
+              public firstPlayerId: number = null,
+              public secondPlayerId: number = null) {
 
   }
 }

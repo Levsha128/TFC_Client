@@ -26,7 +26,7 @@ export class GameResultComponent implements OnInit, OnChanges {
   }
 
   private updateFirstTeam() {
-    this.teamsService.get(this.game.firstTeamId).then(
+    this.teamsService.findByPlayers(this.game.firstTeamForwardId, this.game.firstTeamGoalkeeperId).then(
       (team) => {
         this.firstTeam = team;
       },
@@ -37,7 +37,7 @@ export class GameResultComponent implements OnInit, OnChanges {
   }
 
   private updateSecondTeam() {
-    this.teamsService.get(this.game.secondTeamId).then(
+    this.teamsService.findByPlayers(this.game.secondTeamForwardId, this.game.secondTeamGoalkeeperId).then(
       (team) => {
         this.secondTeam = team;
       },

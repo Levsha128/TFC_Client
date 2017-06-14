@@ -61,8 +61,10 @@ export class NewGameComponent implements OnInit {
   }
 
   public updateTeams() {
-    this.teamsService.get(this.game.firstTeamId).then((res) => this.firstTeam = res, (err) => console.error(err));
-    this.teamsService.get(this.game.secondTeamId).then((res) => this.secondTeam = res, (err) => console.error(err));
+    this.teamsService.findByPlayers(this.game.firstTeamForwardId, this.game.firstTeamGoalkeeperId)
+      .then((res) => this.firstTeam = res, (err) => console.error(err));
+    this.teamsService.findByPlayers(this.game.secondTeamForwardId, this.game.secondTeamGoalkeeperId)
+      .then((res) => this.secondTeam = res, (err) => console.error(err));
   }
 
   public onGoal(goal) {

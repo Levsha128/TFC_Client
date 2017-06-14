@@ -43,4 +43,7 @@
                                 (onGoal)="onGoal($event)"></app-player-game-controls>
     </ul>
   </md-card-content>
+  <md-card-content *ngIf="game.state === STATES.FINISHED">
+    <app-game-result [game]="game"></app-game-result>
+  </md-card-content>
 </md-card>
