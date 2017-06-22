@@ -26,22 +26,32 @@
     </button>
   </md-card-content>
   <md-card-content *ngIf="game.state === STATES.ACTIVE">
-    {{firstTeam.name}} - {{secondTeam.name}}
-    {{game.firstTeamScore}} : {{game.secondTeamScore}}
-    <ul>
-      <app-player-game-controls [playerId]="firstTeamForward" [ownGoalkeeperId]="firstTeamGoalkeeper"
-                                [enemyGoalkeeperId]="secondTeamGoalkeeper"
-                                (onGoal)="onGoal($event)"></app-player-game-controls>
-      <app-player-game-controls [playerId]="firstTeamGoalkeeper" [ownGoalkeeperId]="firstTeamGoalkeeper"
-                                [enemyGoalkeeperId]="secondTeamGoalkeeper"
-                                (onGoal)="onGoal($event)"></app-player-game-controls>
-      <app-player-game-controls [playerId]="secondTeamForward" [ownGoalkeeperId]="secondTeamGoalkeeper"
-                                [enemyGoalkeeperId]="firstTeamGoalkeeper"
-                                (onGoal)="onGoal($event)"></app-player-game-controls>
-      <app-player-game-controls [playerId]="secondTeamGoalkeeper" [ownGoalkeeperId]="secondTeamGoalkeeper"
-                                [enemyGoalkeeperId]="firstTeamGoalkeeper"
-                                (onGoal)="onGoal($event)"></app-player-game-controls>
-    </ul>
+    <div> {{firstTeam.name}} - {{secondTeam.name}}</div>
+    <div> {{game.firstTeamScore}} : {{game.secondTeamScore}}</div>
+    <md-chip-list><md-chip color="accent">Game over</md-chip></md-chip-list>
+    <md-grid-list cols="2">
+      <md-grid-tile>
+        <app-player-game-controls [playerId]="game.firstTeamForwardId" [ownGoalkeeperId]="game.firstTeamGoalkeeperId"
+                                  [enemyGoalkeeperId]="game.secondTeamGoalkeeperId"
+                                  (onGoal)="onGoal($event)"></app-player-game-controls>
+      </md-grid-tile>
+      <md-grid-tile>
+        <app-player-game-controls [playerId]="game.firstTeamGoalkeeperId" [ownGoalkeeperId]="game.firstTeamGoalkeeperId"
+                                  [enemyGoalkeeperId]="game.secondTeamGoalkeeperId"
+                                  (onGoal)="onGoal($event)"></app-player-game-controls>
+      </md-grid-tile>
+      <md-grid-tile>
+        <app-player-game-controls [playerId]="game.secondTeamForwardId" [ownGoalkeeperId]="game.secondTeamGoalkeeperId"
+                                  [enemyGoalkeeperId]="game.firstTeamGoalkeeperId"
+                                  (onGoal)="onGoal($event)"></app-player-game-controls>
+      </md-grid-tile>
+      <md-grid-tile>
+        <app-player-game-controls [playerId]="game.secondTeamGoalkeeperId"
+                                  [ownGoalkeeperId]="game.secondTeamGoalkeeperId"
+                                  [enemyGoalkeeperId]="game.firstTeamGoalkeeperId"
+                                  (onGoal)="onGoal($event)"></app-player-game-controls>
+      </md-grid-tile>
+    </md-grid-list>
   </md-card-content>
   <md-card-content *ngIf="game.state === STATES.FINISHED">
     <app-game-result [game]="game"></app-game-result>

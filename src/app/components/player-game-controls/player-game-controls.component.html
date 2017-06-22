@@ -1,5 +1,8 @@
-<li>
-  <img width="50px" height="50px" [src]="player.avatar"> <span>{{player.name}}</span>
-  <button color="primary" md-raised-button (click)="goal()">+</button>
-  <button color="primary" md-raised-button (click)="ownGoal()">-</button>
-</li>
+<div class="player-column">
+<img  [src]="player.avatar">
+<span class="login">{{player.login}}</span>
+</div>
+<div class="buttons-column">
+  <button class="goal-button" color="primary" md-raised-button (click)="goal()">+</button>
+  <button class="goal-button" color="primary" md-raised-button (click)="ownGoal()">-</button>
+</div>

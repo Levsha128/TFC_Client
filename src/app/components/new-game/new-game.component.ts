@@ -16,10 +16,6 @@ export class NewGameComponent implements OnInit {
 
   progress = false;
   game: Game = new Game();
-  firstTeamForward: number = null;
-  firstTeamGoalkeeper: number = null;
-  secondTeamForward: number = null;
-  secondTeamGoalkeeper: number = null;
   firstTeam: Team = new Team();
   secondTeam: Team = new Team();
   STATES: typeof GameState = GameState;
@@ -33,7 +29,12 @@ export class NewGameComponent implements OnInit {
 
   start() {
     this.progress = true;
-    this.gamesService.create(this.firstTeamForward, this.firstTeamGoalkeeper, this.secondTeamForward, this.secondTeamGoalkeeper)
+    this.gamesService.create(
+      this.game.firstTeamForwardId,
+      this.game.firstTeamGoalkeeperId,
+      this.game.secondTeamForwardId,
+      this.game.secondTeamGoalkeeperId
+    )
       .then(
         (result) => {
           this.game = result;

@@ -31,6 +31,6 @@ export class PlayerGameControlsComponent implements OnInit, OnChanges {
 
 
   ngOnChanges(changes: SimpleChanges): void {
-    this.playersService.get(this.playerId).then((res) => this.player = res, (err) => console.error(err));
+    this.playersService.get(this.playerId).then((res) => {this.player = res;}, (err) => console.error(err));
   }
 }

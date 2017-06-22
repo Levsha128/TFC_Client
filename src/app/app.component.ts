@@ -9,8 +9,9 @@ export class AppComponent {
   menuGroups = [
     {
       items: [
-        {'title': 'Games', 'link': '/games', 'icon': 'group'},
+        {'title': 'Games', 'link': '/games', 'icon': 'list'},
         {'title': 'Friends', 'link': '/friends', 'icon': 'face'},
+        {'title': 'Teams', 'link': '/teams', 'icon': 'group'},
         {'title': 'Chat', 'link': '/chats', 'icon': 'chat'},
       ]
     },

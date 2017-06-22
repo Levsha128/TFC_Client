@@ -1,0 +1,28 @@
+.goal-button {
+  min-width: 36px;
+  line-height: 36px;
+  width: 36px;
+  height: 36px;
+  margin-bottom: 16px;
+  margin-left: 10px;
+}
+
+.login {
+  display: block;
+}
+
+.player-column{
+  display: inline-block;
+}
+
+.buttons-column {
+  width: 32px;
+  float: right;
+  display: inline-block;
+
+}
+
+img {
+  width: 72px;
+  height: 72px;
+}

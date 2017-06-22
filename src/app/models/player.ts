@@ -1,6 +1,6 @@
 export class Player {
   constructor(public id: number = null,
-              public name = '',
+              public login = '',
               public avatar = 'user.png') {
 
   }
