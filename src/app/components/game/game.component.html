@@ -12,7 +12,7 @@
     ></app-game-timeline>
   </md-tab>
   <md-tab label="Statistics" style="text-align: center;">
-    <main style="fill: #5aa454; display: inline-block;" *ngFor="let gameStats of stats">
+    <main style="fill: #5aa454; display: inline-block; text-align: center; margin-bottom: 50px;" *ngFor="let gameStats of stats">
       <ngx-charts-gauge
         [view]="chartsView"
         [scheme]="chartsColorScheme"
@@ -25,6 +25,7 @@
         [units]="gameStats.units"
       >
       </ngx-charts-gauge>
+      <span>{{gameStats.title}}</span>
     </main>
   </md-tab>
 </md-tab-group>

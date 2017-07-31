@@ -12,6 +12,11 @@ const appRoutes: Routes = [
   {path: 'games', component: GamesComponent/*, canActivate: [LoggedInGuard]*/},
   {path: 'games/new', component: NewGameComponent/*, canActivate: [LoggedInGuard]*/},
   {path: 'games/:id', component: GameComponent/*, canActivate: [LoggedInGuard]*/},
+  {path: 'teams', component: TeamsComponent},
+  {path: 'teams/:id', component: TeamComponent},
+  // {path: 'players', component: PlayersComponent},
+  // {path: 'players/:id', component: PlayerComponent},
+  {path: 'friends', component: FriendsComponent},
   {path: '', redirectTo: '/games', pathMatch: 'full'}
 ];
 
@@ -30,6 +35,10 @@ import {TeamsService} from "./services/teams.service";
 import {GameEventsService} from "./services/game-events.service";
 import {GameResultComponent} from './components/game-result/game-result.component';
 import {GameStatsService} from './services/game-stats.service';
+import {TeamsComponent} from './components/teams/teams.component';
+import {TeamComponent} from './components/team/team.component';
+import {PlayersComponent} from './components/players/players.component';
+import {FriendsComponent} from './components/friends/friends.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +49,11 @@ import {GameStatsService} from './services/game-stats.service';
     GameTimelineComponent,
     NewGameComponent,
     PlayerGameControlsComponent,
-    GameResultComponent
+    GameResultComponent,
+    TeamsComponent,
+    TeamComponent,
+    PlayersComponent,
+    FriendsComponent
   ],
   imports: [
     BrowserModule,

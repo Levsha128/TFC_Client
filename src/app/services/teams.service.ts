@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Team} from "../models/team";
 import {Http, RequestOptions} from "@angular/http";
+import Any = jasmine.Any;
 
 @Injectable()
 export class TeamsService {
@@ -23,4 +24,17 @@ export class TeamsService {
     });
   }
 
+  all(): Promise<Team[]> {
+    const url = `${this.apiRoot}/teams/`;
+    return this.http.get(url, {}).toPromise().then(response => {
+      return response.json().data as Team[];
+    });
+  }
+
+  getStats(id: number) : Promise<any[]> {
+    const url = `${this.apiRoot}/teams/${id}/stats`;
+    return this.http.get(url).toPromise().then(response => {
+      return response.json().data as any[];
+    });
+  }
 }
