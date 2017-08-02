@@ -6,10 +6,10 @@ TFC is application for table football(fuzboll) stats tracking.
 This project is my training project and code quality not production ready.
 
 # Screenshots
+
 ![Games list screen](/documentation/images/games-list.png)
-
+![Games list with menu open screen](/documentation/images/games-list-with-menu-open.png)
 ![Games timeline screen](/documentation/images/game-timeline.png)
-
 ![Team screen](/documentation/images/team.png)
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.26.
