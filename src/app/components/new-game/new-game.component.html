@@ -22,7 +22,7 @@
     <md-select placeholder="Goalkeeper" [(ngModel)]="secondTeamGoalkeeper">
       <md-option *ngFor="let player of players" [value]="player.id">{{ player.login }}</md-option>
     </md-select>
-    <button md-raised-button color="primary" [disabled]="progress" style="margin-top: 20px;" (click)="start()">Start
+    <button md-raised-button color="primary" [disabled]="progress" class="start-button" (click)="start()">Start
     </button>
   </md-card-content>
   <md-card-content *ngIf="game.state === STATES.ACTIVE">

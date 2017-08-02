@@ -1,3 +1,14 @@
 .game-result-wrapper {
   padding: 10px;
 }
+
+.statistics-tab {
+  text-align: center;
+}
+
+.statistics-tab__content {
+  fill: #5aa454;
+  display: inline-block;
+  text-align: center;
+  margin-bottom: 50px;
+}

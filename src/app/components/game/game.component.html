@@ -11,8 +11,8 @@
       [secondTeam]="secondTeam"
     ></app-game-timeline>
   </md-tab>
-  <md-tab label="Statistics" style="text-align: center;">
-    <main style="fill: #5aa454; display: inline-block; text-align: center; margin-bottom: 50px;" *ngFor="let gameStats of stats">
+  <md-tab label="Statistics" class="statistics-tab">
+    <main class="statistics-tab__content" *ngFor="let gameStats of stats">
       <ngx-charts-gauge
         [view]="chartsView"
         [scheme]="chartsColorScheme"

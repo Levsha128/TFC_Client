@@ -1,0 +1,18 @@
+.team__labels-container {
+  display: inline-block;
+}
+
+.team__label {
+  color: #a2a2a2;
+}
+
+.team__logo {
+  float: right;
+}
+
+.team-stats-container {
+  fill: #5aa454;
+  display: inline-block;
+  text-align: center;
+  margin-bottom: 50px;
+}
