@@ -1,16 +1,10 @@
 import {Injectable} from '@angular/core';
-import {Team} from "../models/team";
-import {Http, RequestOptions} from "@angular/http";
-import Any = jasmine.Any;
+import {Team} from '../models/team';
+import {APIService} from './APIService';
 
 @Injectable()
-export class TeamsService {
-  private apiRoot: string = 'http://192.168.1.100:3000';
-
-  constructor(private http: Http) {
-  }
-
-  get(id: number): Promise<Team> {
+export class TeamsService extends APIService {
+  get (id: number): Promise<Team> {
     const url = `${this.apiRoot}/teams/${id}`;
     return this.http.get(url).toPromise().then(response => {
       return response.json().data as Team;
@@ -31,7 +25,7 @@ export class TeamsService {
     });
   }
 
-  getStats(id: number) : Promise<any[]> {
+  getStats(id: number): Promise<any[]> {
     const url = `${this.apiRoot}/teams/${id}/stats`;
     return this.http.get(url).toPromise().then(response => {
       return response.json().data as any[];

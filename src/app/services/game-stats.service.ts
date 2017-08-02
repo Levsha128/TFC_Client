@@ -1,15 +1,9 @@
 import {Injectable} from '@angular/core';
-import {Http} from '@angular/http';
 import {GameStats} from '../models/game-stats';
+import {APIService} from './APIService';
 
 @Injectable()
-export class GameStatsService {
-  private apiRoot: string = 'http://192.168.1.100:3000';
-
-
-  constructor(private http: Http) {
-  }
-
+export class GameStatsService extends APIService {
   public getForGame(gameId: number) {
     const url = `${this.apiRoot}/games/${gameId}/stats`;
     return this.http.get(url).toPromise().then(response => {
