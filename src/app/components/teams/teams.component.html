@@ -1,0 +1,10 @@
+<md-card class="card" *ngFor="let team of teams">
+  <md-card-header>
+    {{team.name}}
+    {{team.group}}
+    <img class="team-logo" [src]="team.logo">
+  </md-card-header>
+  <md-card-actions>
+    <button md-button [routerLink]="['/teams', team.id]">DETAILS</button>
+  </md-card-actions>
+</md-card>

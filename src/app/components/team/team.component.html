@@ -1,0 +1,22 @@
+<md-card class="card">
+  <div><span style="color:#a2a2a2;">Name: </span>{{team.name}}</div>
+  <div><span style="color:#a2a2a2;">Group: </span>{{team.group}}</div>
+<img class="team-logo" style="float: right;" [src]="team.logo">
+</md-card>
+
+<main style="fill: #5aa454; display: inline-block; text-align: center;    margin-bottom: 50px;"
+      *ngFor="let teamStats of stats">
+  <ngx-charts-gauge
+    [view]="chartsView"
+    [scheme]="chartsColorScheme"
+    [results]="teamStats.data"
+    [min]="teamStats.min"
+    [max]="teamStats.max"
+    [showAxis]="false"
+    [angleSpan]="240"
+    [startAngle]="-120"
+    [units]="teamStats.units"
+  >
+  </ngx-charts-gauge>
+  <span>{{teamStats.title}}</span>
+</main>
