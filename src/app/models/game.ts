@@ -8,7 +8,9 @@ export class Game {
               public secondTeamGoalkeeperId: number = null,
               public firstTeamScore: number = 0,
               public secondTeamScore: number = 0,
-              public state: GameState = GameState.PENDING) {
+              public state: GameState = GameState.PENDING,
+              public start: Date = null,
+              public end: Date = null) {
 
   };
 }

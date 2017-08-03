@@ -4,7 +4,7 @@ export class GameEvent {
   constructor(public id: number = null,
               public type: string = null,
               public title: string = null,
-              public time: string = null,
+              public time: Date = null,
               public firstTeam: boolean = GameEvent.TEAM_FIRST,
               public description: string = null) {
 
